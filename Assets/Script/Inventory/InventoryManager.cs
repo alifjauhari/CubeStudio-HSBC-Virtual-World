@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
         public List<GameObject> itemButtons;
     }
 
-    public Transform contentPanel; // Scroll view content panel
+    public Transform contentPanel;
     public Button allButton;
     public Sprite allButtonSelectedSprite;
     public Sprite allButtonUnselectedSprite;
@@ -25,37 +25,29 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        // Setup category buttons
         foreach (var category in categories)
         {
             category.categoryButton.onClick.AddListener(() => SelectCategory(category));
         }
 
-        // Setup All button
         allButton.onClick.AddListener(DisplayAllItems);
 
-        // Initially display all items and select All button
         DisplayAllItems();
     }
 
     public void SelectCategory(Category category)
     {
-        // Update button sprites
         UpdateButtonSprites(category.categoryButton, category.selectedSprite);
 
-        // Filter items by selected category
         FilterItemsByCategory(category.categoryName);
     }
 
     public void DisplayAllItems()
     {
-        // Update button sprites
         UpdateButtonSprites(allButton, allButtonSelectedSprite);
 
-        // Clear existing items
         ClearContentPanel();
 
-        // Display all items from all categories
         foreach (var category in categories)
         {
             foreach (var itemButton in category.itemButtons)
@@ -67,10 +59,8 @@ public class InventoryManager : MonoBehaviour
 
     private void FilterItemsByCategory(string category)
     {
-        // Clear existing items
         ClearContentPanel();
 
-        // Find the category and display its items
         foreach (var cat in categories)
         {
             if (cat.categoryName == category)
@@ -96,7 +86,6 @@ public class InventoryManager : MonoBehaviour
     {
         if (currentSelectedCategoryButton != null)
         {
-            // Set the unselected sprite for the previously selected button
             Image prevButtonImage = currentSelectedCategoryButton.GetComponent<Image>();
             if (prevButtonImage != null)
             {
@@ -104,7 +93,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // Set the selected sprite for the newly selected button
         Image selectedButtonImage = selectedButton.GetComponent<Image>();
         if (selectedButtonImage != null)
         {
