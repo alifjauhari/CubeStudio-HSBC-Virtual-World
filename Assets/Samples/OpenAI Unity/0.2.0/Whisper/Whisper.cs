@@ -96,8 +96,9 @@ namespace Samples.Whisper
             message.text = "加载中...";
             //message.text = "Transcripting...";
             stopRecording?.Invoke();
-
-            #if !UNITY_WEBGL
+            recordButton.gameObject.SetActive(false);
+            stopButton.gameObject.SetActive(false);
+#if !UNITY_WEBGL
             Microphone.End(null);
             #endif
             
@@ -118,8 +119,7 @@ namespace Samples.Whisper
             recorded?.Invoke();
 
             AskAI();
-            recordButton.gameObject.SetActive(true);
-            stopButton.gameObject.SetActive(false);
+            
         }
 
         public void AskAI()
