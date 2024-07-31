@@ -345,6 +345,30 @@ MonoBehaviour:
           m_StringArgument: "\u4F60\u597D! \u8BF7\u95EE\u4ECA\u5929\u6709\u4EC0\u4E48\u53EF\u4EE5\u5E2E\u5FD9\u7684\u5417\uFF1F"
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1005120747}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u4F60\u597D! \u8BF7\u95EE\u4ECA\u5929\u6709\u4EC0\u4E48\u53EF\u4EE5\u5E2E\u5FD9\u7684\u5417\uFF1F"
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 508593305}
+        m_TargetAssemblyTypeName: ChangeImageColor, Assembly-CSharp
+        m_MethodName: ChangeColor2White
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u4F60\u597D! \u8BF7\u95EE\u4ECA\u5929\u6709\u4EC0\u4E48\u53EF\u4EE5\u5E2E\u5FD9\u7684\u5417\uFF1F"
+          m_BoolArgument: 1
+        m_CallState: 2
   OnMouseHoverEnter:
     m_PersistentCalls:
       m_Calls:
@@ -1978,7 +2002,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 508593305}
         m_TargetAssemblyTypeName: ChangeImageColor, Assembly-CSharp
         m_MethodName: ChangeColor2White
@@ -2059,7 +2083,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
+        m_CallState: 0
   error:
     m_PersistentCalls:
       m_Calls:
@@ -2074,6 +2098,21 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 0
+  micropohoneError:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1483541785}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MicrophoneError
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &365483409
 Transform:
@@ -5786,12 +5825,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!81 &847190073
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6983,7 +7022,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1376875741}
   m_HandleRect: {fileID: 1376875740}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10115,6 +10154,7 @@ GameObject:
   - component: {fileID: 1483541784}
   - component: {fileID: 1483541783}
   - component: {fileID: 1483541782}
+  - component: {fileID: 1483541785}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -10238,6 +10278,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483541780}
   m_CullTransparentMesh: 1
+--- !u!95 &1483541785
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483541780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae7d2f9e4026bfd43814a8d31f71cd3e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1496399133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10842,7 +10903,7 @@ MonoBehaviour:
   m_text: Select Microphone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 5540152531284962189, guid: ce3b05c8a1996e04e82ea9e7a5ed8892, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10905,7 +10966,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1582427119

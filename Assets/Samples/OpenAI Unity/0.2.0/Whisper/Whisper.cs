@@ -33,6 +33,8 @@ namespace Samples.Whisper
         public UnityEvent answer;
         public UnityEvent error;
 
+        public UnityEvent micropohoneError;
+
         private void Awake()
         {
             if (Instance && Instance != this)
@@ -75,6 +77,13 @@ namespace Samples.Whisper
         
         private void StartRecording()
         {
+            var index = PlayerPrefs.GetInt("user-mic-device-index");
+            if (index == 0)
+            {
+                micropohoneError?.Invoke();
+                return;
+            }
+
             startRecording?.Invoke();
             message.text = "...";
 
@@ -84,9 +93,8 @@ namespace Samples.Whisper
             isRecording = true;
             //recordButton.enabled = false;
 
-            var index = PlayerPrefs.GetInt("user-mic-device-index");
-            
-            #if !UNITY_WEBGL
+#if !UNITY_WEBGL
+
             clip = Microphone.Start(dropdown.options[index].text, false, duration, 44100);
             #endif
         }
